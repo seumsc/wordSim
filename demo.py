@@ -7,13 +7,20 @@ import dict
 
 if __name__ == '__main__':
     argv = sys.argv
+    list=[]
     if len(argv) < 2:
         print("attribs too little, we need two attribs.")
-        print('Type two attribs and then type enter key.')
-        exit
-    print('[searching on website]')
-    a = argv[0]
-    b = argv[1]
+        # print('Type two attribs and then type enter key.')
+        print("Please input the first word:")
+        list.append(input())
+        print("Please intpu the second word")
+        list.append(input())
+    else:
+        list[0]=argv[0]
+        list[1]=argv[1]
+    print('[searching on website]: '+list[0]+'  '+list[1])
+    a = list[0]
+    b = list[1]
     webAdd = 'https://en.wikipedia.org/wiki/'
     webPost = ''
     # webAdd='https://cn.bing.com/search?q='

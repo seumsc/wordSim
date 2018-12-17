@@ -7,7 +7,7 @@ class webGet:
     #使用正常的字符替换HTML中特殊的字符实体.
     #你可以添加新的实体字符到CHAR_ENTITIES中,处理更多HTML字符实体.
     #@param htmlstr HTML字符串.
-    def replaceCharEntity(self,htmlstr):
+    def replaceCharEntity(self, htmlstr):
         CHAR_ENTITIES = {'nbsp': ' ', '160': ' ',
                          'lt': '<', '60': '<',
                          'gt': '>', '62': '>',
@@ -26,12 +26,14 @@ class webGet:
                 htmlstr = re_charEntity.sub('', htmlstr, 1)
                 sz = re_charEntity.search(htmlstr)
         return htmlstr
-    def repalce(self,s, re_exp, repl_string):
+
+    def repalce(self, s, re_exp, repl_string):
         return re_exp.sub(repl_string, s)
     ##过滤HTML中的标签
     #将HTML中标签等信息去掉
     #@param htmlstr HTML字符串.
-    def filter_tags(self,htmlstr):
+
+    def filter_tags(self, htmlstr):
         #先过滤CDATA
         re_cdata = re.compile('//<!\[CDATA\[[^>]*//\]\]>', re.I)  # 匹配CDATA
         re_script = re.compile(
